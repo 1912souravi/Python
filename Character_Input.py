@@ -1,0 +1,2 @@
+from datetime import datetimefrom dateutil.relativedelta import relativedeltadef year_cal(n,curr_age): age_diff=n-curr_age today=datetime.now() n_years=today + relativedelta(years=age_diff) return (format(n_years,"%d-%m-%Y")) print(year_cal(100,0))
+def main():  name=input("Enter your name")  age=int(input("Enter your age"))  x=year_cal(100,age)  return ("Hi " +name +" you will be 100 years old on "+ x)  print(main())
