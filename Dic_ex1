@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct  4 08:13:01 2017
+
+@author: souravi
+"""
+
+lst=[]
+dic_day={}
+file=open("/Users/souravi/Documents/Python/romeo.txt")
+
+for line in file:
+    line=line.rstrip()
+    lst=line.split()
+    if lst[0]=='From':
+        if lst[2] in dic_day:
+            
+            dic_day[lst[2]]+=1
+        else:
+            dic_day[lst[2]]=1
+print (dic_day)
