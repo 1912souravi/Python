@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct  4 08:13:01 2017
+
+@author: souravi
+"""
+
+lst=[]
+dic_day={}
+max_v=0
+max_k=0
+file=open("/Users/souravi/Documents/Python/romeo.txt")
+'''1'''
+for line in file:
+    line=line.rstrip()
+    lst=line.split()
+    if lst[0]=='From':
+        dom=lst[5].split(':')
+        if dom[0] in dic_day:
+            
+            dic_day[dom[0]]+=1
+        else:
+            dic_day[dom[0]]=1
+lst=[]            
+for k,v in dic_day.items():
+    lst.append((k,v))
+    lst=sorted(lst)
+for i in lst:
+    print(i[0],i[1])
+
+    
