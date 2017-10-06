@@ -1,0 +1,46 @@
+'''
+Write a program that reads a file and prints the letters in decreasing order of frequency. Your program should convert all the input to lower case and only count the letters a-z. Your program should not count spaces, digits, punctua- tion, or anything other than the letters a-z. Find text samples from several different languages and see how letter frequency varies between languages.'''
+
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct  4 08:13:01 2017
+
+@author: souravi
+"""
+
+
+dic_day={}
+file=open("/Users/souravi/Documents/Python/romeo.txt")
+'''1'''
+for lines in file:
+    lines=lines.rstrip()
+    for i in lines:
+        
+        lst=i.lower()
+        #print(lst)
+        
+        for letter in lst:
+            #print(letter)
+            if letter in 'abcdefghijklmnopqrstuvwxyz' and letter in dic_day:
+                dic_day[letter]+=1
+            elif letter in 'abcdefghijklmnopqrstuvwxyz' and letter not in dic_day:
+                dic_day[letter]=1
+print(dic_day)
+
+'''2'''
+
+import re
+
+dic={}
+file=open("/Users/souravi/Documents/Python/romeo.txt")
+'''1'''
+for line in file:
+    line=line.rstrip()
+    line=line.lower()
+    lst=re.findall('[abcdefghijklmnopqrstuvwxyz]+',line)
+
+    for letter in lst:
+            #print(letter)
+            ivalue = dic.get(letter,1)
+print(dic)
