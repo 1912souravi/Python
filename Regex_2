@@ -1,0 +1,28 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct  4 08:13:01 2017
+
+@author: souravi
+"""
+
+
+
+import re
+file="/Users/souravi/Documents/Python/romeo.txt"
+fh=open(file)
+
+file_name=re.findall('^/?\S*.txt',file)
+num=0
+count=0
+print(file_name)
+for line in fh:
+    lst=re.findall('New Revision: ([0-9]+)',line)
+    if len(lst) > 1 or len(lst)==0 :
+        continue
+    else:
+        num+=float(lst[0])
+        count+=1
+print (float(num/count))
+        
+    
