@@ -1,0 +1,31 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct  4 08:13:01 2017
+
+@author: souravi
+"""
+
+
+
+import re
+file="/Users/souravi/Documents/Python/romeo.txt"
+
+file_name=re.findall('^/?\S*.txt',file)
+
+print(file_name)
+
+cmd=input("Enter a regular Expression: ")
+
+def grep(cmd,file):
+    count=0
+    fh=open(file)
+    for line in fh:
+        
+        lst=re.findall(cmd,line)
+        count+=len(lst)
+    
+    return count
+
+
+print(str(file),' matched with',grep(cmd,file),'strings when matched with',cmd)    
